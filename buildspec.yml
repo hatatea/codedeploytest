@@ -3,4 +3,4 @@ version: 0.1
 phases:
   build:
     commands:
-      - aws s3 sync --exact-timestamps --delete * s3://www-origin.irecolors.com
+      - aws s3 sync . s3://www-origin.irecolors.com
