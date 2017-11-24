@@ -1,0 +1,11 @@
+{
+    "TopicConfigurations": [
+        {
+            "TopicArn": "arn:aws:sns:ap-northeast-1:269686386561:NotifyMe",
+            "Events": [
+                "s3:ObjectCreated:*",
+                "s3:ObjectRemoved:*"
+            ]
+        }
+    ]
+}

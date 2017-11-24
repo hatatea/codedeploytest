@@ -1,6 +1,13 @@
 version: 0.1
  
 phases:
+  pre_build:
+    commands:
+      - aws s3api put-bucket-notification --bucket www-origin.irecolors.com --notification-configuration file://empty.json
   build:
     commands:
       - aws s3 cp index.html s3://www-origin.irecolors.com
+  post_build:
+    commands:
+      - aws s3api put-bucket-notification-configuration --bucket www-origin.irecolors.com --notification-configuration file://notification.json
+
